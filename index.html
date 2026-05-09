@@ -108,6 +108,310 @@
             color: #333;
         }
 
+        /* NEWS TICKER */
+        .ticker-container {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 2px solid #d32f2f;
+            overflow: hidden;
+            height: 3rem;
+        }
+
+        .ticker-label {
+            background: #d32f2f;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 1px;
+        }
+
+        .ticker-content {
+            display: flex;
+            gap: 2rem;
+            animation: scroll-left 600s linear infinite;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            padding: 0 1rem;
+            border-right: 1px solid #d32f2f;
+            font-size: 0.95rem;
+            line-height: 1.5rem;
+        }
+
+        .ticker-item:last-child {
+            border-right: none;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .ticker-content:hover {
+            animation-play-state: paused;
+        }
+
+        /* SPORTS SCORES */
+        .scores-container {
+            background: white;
+            padding: 1rem;
+            border-bottom: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .scores-label {
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .scores-scroll-container {
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .scores-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scores-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .scores-scroll-container::-webkit-scrollbar-thumb {
+            background: #d32f2f;
+            border-radius: 3px;
+        }
+
+        .scores-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #b71c1c;
+        }
+
+        .scores-content {
+            display: flex;
+            gap: 1rem;
+            width: fit-content;
+            padding: 0.5rem 0;
+        }
+
+        .score-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            min-width: 160px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .score-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .score-league {
+            font-size: 0.7rem;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-matchup {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .score-team {
+            margin-bottom: 0.5rem;
+        }
+
+        .score-team-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .score-team-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-left: 0.5rem;
+        }
+
+        .score-status {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .score-final {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .scores-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .scroll-btn {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .scroll-btn:hover {
+            background: #b71c1c;
+        }
+
+        .scroll-btn:active {
+            transform: scale(0.95);
+        }
+
+        .standings-container {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .standings-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .standings-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            background: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .standings-scroll-wrapper {
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            flex: 1;
+        }
+
+        .standings-scroll-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .standings-scroll-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .standings-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: #d32f2f;
+            border-radius: 3px;
+        }
+
+        .standings-grid {
+            display: flex;
+            gap: 1rem;
+            width: fit-content;
+            padding-bottom: 0.5rem;
+        }
+
+        .standings-league {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            min-width: 240px;
+            flex-shrink: 0;
+        }
+
+        .standings-league h3 {
+            font-size: 1rem;
+            color: #d32f2f;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #d32f2f;
+            white-space: nowrap;
+        }
+
+        .standings-table {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .standings-table th {
+            background: #f0f0f0;
+            padding: 0.4rem 0.5rem;
+            text-align: left;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .standings-table td {
+            padding: 0.4rem 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .standings-rank {
+            font-weight: 600;
+            color: #d32f2f;
+            width: 24px;
+        }
+
+        .standings-team {
+            color: #333;
+        }
+
+        .standings-wins {
+            text-align: center;
+            color: #2e7d32;
+            font-weight: 600;
+            width: 30px;
+        }
+
+        .standings-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -551,6 +855,44 @@
         <a href="about.html">About Robert</a>
         <a href="goat-farm.html">Goat Farm</a>
     </nav>
+
+    <!-- NEWS TICKER -->
+    <div class="ticker-container">
+        <div class="ticker-label">BREAKING NEWS</div>
+        <div class="ticker-content" id="newsTickerContent">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- SPORTS SCORES -->
+    <div class="scores-container">
+        <div class="scores-label">SCORES</div>
+        <div class="scores-scroll-container" id="scoresContainer">
+            <div class="scores-content" id="scoresContent">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+        <div class="scores-nav">
+            <button class="scroll-btn" onclick="scrollScoresLeft()">← LEFT</button>
+            <button class="scroll-btn" onclick="scrollScoresRight()">RIGHT →</button>
+        </div>
+    </div>
+
+    <!-- STANDINGS -->
+    <div class="standings-container">
+        <div class="standings-header">
+            <div class="standings-title">STANDINGS</div>
+            <div class="standings-scroll-wrapper" id="standingsScrollWrapper">
+                <div class="standings-grid" id="standingsGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="standings-nav">
+                <button class="scroll-btn" onclick="scrollStandingsLeft()">← LEFT</button>
+                <button class="scroll-btn" onclick="scrollStandingsRight()">RIGHT →</button>
+            </div>
+        </div>
+    </div>
 
     <!-- BEDTIME APP - FULL WIDTH -->
     <div id="bedtime" class="app-section">
@@ -1361,6 +1703,337 @@
             kieferSlider.addEventListener('input', updateKieferDisplay);
         }
         updateKieferDisplay();
+
+        // NEWS TICKER & SPORTS SCORES
+        const newsHeadlines = [
+            "Man Discovers His Sourdough Starter Has Achieved Sentience, Refuses to Feed It",
+            "Local Woman Spends Entire Grocery Budget on Artisanal Pickle Brine",
+            "Squirrel Wins Local Election, Immediately Declares Nut Embargo",
+            "Cryptocurrency Investor Buys $47,000 Digital Shoe, Can't Wear It",
+            "Derek From Accounting Convinced He Invented Water",
+            "Airport Security Confiscates Passenger's 'Emotional Support Sandwich'",
+            "Man Argues With GPS For 3 Hours, GPS Files Restraining Order",
+            "Woman Patents Ability to Open Jars, Sues Everyone",
+            "Local Restaurant Serves 'Deconstructed Water', Charges $18 Per Plate",
+            "Influencer Announces Retirement After Only 4 Minutes of Fame",
+            "Guy Names His Car 'The Vehicle', Confuses Everyone Completely",
+            "Scientists Discover Pigeons Can Read, Immediately Regret It",
+            "Man Trades His Entire Portfolio For Rare Pepe JPG, Feels Great About It",
+            "Woman Invents New Dance, Immediately Gets Sued By 12 TikTok Users",
+            "Speedrunner Beats Life in 23 Years 4 Months, Sets New Record",
+            "Local Man Still Waiting for Promised Change, Votes Anyway",
+            "Company Introduces NFT of a Sandwich, Stock Price Drops 67%",
+            "Conspiracy Theorist Finally Right About Something, Nobody Believes Him",
+            "Millennial Discovers Avocado Toast Costs $47, Decides to Become Minimalist",
+            "AI Chatbot Develops Spite, Refuses to Help Anyone Named Kevin",
+            "Man Buys Smart Fridge, Spends $8,000 Per Year On Internet Bill",
+            "Woman Asks For Extra Cheese, Gets Served Literal Cheese Wheel",
+            "Local Meetup Group Discusses 'Important Issues', Just Complains About Weather",
+            "Guy Installs Ring Doorbell, Spends $30,000 On Packages to Test It",
+            "Someone Finally Reads Terms of Service, Wishes They Hadn't",
+            "Podcast About Nothing Becomes Wildly Popular, Hosts Confused",
+            "Man Gets Mistaken For Famous Person, Doesn't Correct Them, Becomes Mayor",
+            "Woman Accidentally Deletes Internet, Whole City in Panic",
+            "Algorithm Recommends Watching Paint Dry, Viewer Actually Does",
+            "Local Man Discovers His Mirror Is Judging Him",
+            "Pizza Arrives Cold, Customer Sues For Emotional Damages",
+            "Dog Successfully Applies For LinkedIn, Gets Job Immediately",
+            "Man Wears Same Shirt 400 Days Straight, Becomes Fashion Icon",
+            "Woman Invents New Word, Dictionary Immediately Fights Her",
+            "Coffee Shop Opens Coffee Shop Inside Coffee Shop, Paradox Occurs",
+            "Local Gym Introduces Treadmill That Judges You While Running",
+            "Man Rents Storage Unit For Storage Unit Contents",
+            "Therapist Charges $200/Hour to Stare Silently, Clients Love It",
+            "Woman Creates Excel Spreadsheet to Track Time Spent on Excel Spreadsheets",
+            "Guy Buys Self-Help Book About Buying Self-Help Books, Infinite Loop",
+            "Someone Invents Gluten-Free Water, Sells 10,000 Bottles",
+            "Local Man Becomes Expert in Field He Just Learned About Yesterday",
+            "Woman Names Her WiFi 'Tell My WiFi Love Her', Neighborhood Confused",
+            "Influencer Takes Photo of Food, Spends 6 Hours Editing, Food Cold",
+            "Man Becomes Millionaire By Selling Advice on How to Become Millionaire",
+            "New App Helps Track How Much Time You Spend On New Apps",
+            "Woman Joins Gym in January, Leaves Key in Locker, Never Returns",
+            "Local Entrepreneur Sells Invisible Product, Makes Millions",
+            "Guy Attends Productivity Seminar, Becomes Less Productive",
+            "Woman Discovers Cheating Spouse Via WiFi Network Names",
+            "Man Spends $5,000 On Wellness Retreat, Realizes He's Just Tired",
+            "Someone Patents the Color Blue, Immediately Sued By Every Company Ever",
+            "Local Guy Argues With Self In Bathroom Mirror, Both Sides Lose",
+            "Woman Buys $400 'Luxury' Pillow, Misses Her Old $10 Pillow",
+            "Man Creates Business Plan In Dream, Wakes Up, Forgets Everything",
+            "Zoom Call Becomes Self-Aware, Demands Representation",
+            "Someone Discovers Their Old Passwords Written on Sticky Note, Dies Internally",
+            "Woman Joins Book Club, Hasn't Read Anything But Sparknotes Since 2004",
+            "Guy Becomes Addicted to Energy Drinks, Becomes Human-Shaped Energy",
+            "Local Influencer's Curated Life Falls Apart Live on Stream",
+            "Man Tries to Return Item Without Receipt From 2003, Becomes Viral",
+            "Woman Names Her Plant, Forgets Her Own Middle Name",
+            "Someone Wins Lottery, Loses Ticket, Loses Mind",
+            "Guy Orders Food Online, Password Forgotten, Starves Instead",
+            "Woman Discovers She's Been Pronouncing Her Own Name Wrong For 40 Years",
+            "Local Man Becomes Enemy of Autocorrect, Loses War Completely",
+            "Someone Writes Passive-Aggressive Note On Microwave, Starts Feud",
+            "Woman Creates Instagram Account For Her Dog, Dog More Popular Than Her",
+            "Guy Spends Fortune on Cryptocurrency, Loses It to Typo",
+            "Man Attends Networking Event, Realizes He Hates Networking",
+            "Someone Discovers They've Been Using LinkedIn Wrong Since 2009",
+            "Woman Bakes Sourdough, Gives It Name, Files Taxes For It",
+            "Local Guy Becomes Expert After Watching One YouTube Video",
+            "Man Orders Coffee, Barista Writes His Name So Wrong He Accepts It",
+            "Woman Joins Fitness Challenge, Completes It Eating McDonald's",
+            "Someone Discovers Adulting Is Just Pretending You Know What You're Doing",
+            "Guy Buys Expensive Planner, Forgets To Use It, Plans With Receipts",
+            "Woman Discovers Her Therapist Has More Problems Than She Does",
+            "Local Man Finally Understands Taxes, Immediately Forgets Again",
+            "Someone Starts Meditation, Falls Asleep, Feels Refreshed Anyway",
+            "Man Tries Meal Prep, Eats It All On Sunday, Starves Rest of Week",
+            "Woman Joins Dating App, Matches With Her Cousin, Confused",
+            "Guy Invents Productivity System, Spends 8 Hours Organizing System",
+            "Someone Discovers Their Favorite Restaurant Is Actually Just Their Kitchen",
+            "Woman Buys Self-Care Kit, Uses It Once, Guilt Lasts 6 Months",
+            "Local Man Becomes Convinced His Neighbor Is A Spy, Probably Right",
+            "Guy Reads Self-Help Book, Becomes More Helpless",
+            "Woman Discovers She's Been Using the Internet Wrong This Whole Time",
+            "Someone Spends $300 on Productivity App, Becomes Less Productive",
+            "Man Creates Vision Board, Accomplished None of It, Made It Again",
+            "Woman Joins Group Chat, Regrets Immediately, Can't Leave"
+        ];
+
+        const sportsScores = [
+            { league: "Quidditch", team1: "Ashland Snitches", score1: 247, team2: "Bozeman Bludgeons", score2: 189, status: "Final" },
+            { league: "Quidditch", team1: "Helena Seekers", score1: 198, team2: "Missoula Beaters", score2: 156, status: "Final" },
+            { league: "Quidditch", team1: "Billings Broomsticks", score1: 312, team2: "Butte Chasers", score2: 267, status: "Final" },
+            { league: "Quidditch", team1: "Bozeman Bludgeons", score1: 201, team2: "Helena Seekers", score2: 195, status: "Final" },
+            { league: "Quidditch", team1: "Missoula Beaters", score1: 156, team2: "Ashland Snitches", score2: 143, status: "Final" },
+            { league: "Lawn Bowling", team1: "Sedalia Strikers", score1: 47, team2: "Winona Weavers", score2: 52, status: "Final" },
+            { league: "Lawn Bowling", team1: "Springfield Rollers", score1: 63, team2: "Peoria Lawn Masters", score2: 58, status: "Final" },
+            { league: "Lawn Bowling", team1: "Decatur Greens", score1: 41, team2: "Champaign Bowlers", score2: 44, status: "Final" },
+            { league: "Lawn Bowling", team1: "Urbana Smooth Rollers", score1: 55, team2: "Normal Curve Throwers", score2: 49, status: "Final" },
+            { league: "Lawn Bowling", team1: "Winona Weavers", score1: 38, team2: "Sedalia Strikers", score2: 35, status: "Final" },
+            { league: "Grass Surfing", team1: "Bend Breakers", score1: 8, team2: "Eureka Gliders", score2: 6, status: "Final" },
+            { league: "Grass Surfing", team1: "Redding Riders", score1: 9, team2: "Red Bluff Wave Surfers", score2: 7, status: "Final" },
+            { league: "Grass Surfing", team1: "Chico Wave Warriors", score1: 5, team2: "Oroville Lawn Riders", score2: 8, status: "Final" },
+            { league: "Grass Surfing", team1: "Corning Slope Masters", score1: 7, team2: "Tehama Grass Gliders", score2: 6, status: "Final" },
+            { league: "Grass Surfing", team1: "Orland Terrain Riders", score1: 10, team2: "Glenn Meadow Surfers", score2: 4, status: "Final" },
+            { league: "Ice Baseball", team1: "Marquette Icebreakers", score1: 12, team2: "Duluth Frostballs", score2: 9, status: "Final" },
+            { league: "Ice Baseball", team1: "Superior Sliders", score1: 14, team2: "Ashland Frozen Bats", score2: 11, status: "Final" },
+            { league: "Ice Baseball", team1: "Bayfield Blizzard Batters", score1: 8, team2: "Ironwood Ice Strikers", score2: 10, status: "Final" },
+            { league: "Ice Baseball", team1: "Houghton Glacier Hitters", score1: 15, team2: "Crystal Falls Frost Nine", score2: 13, status: "Final" },
+            { league: "Ice Baseball", team1: "Negaunee Frozen Sluggers", score1: 11, team2: "Ishpeming Cold Hitterscore", score2: 7, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Topeka Triggers", score1: 34, team2: "Fargo Fearless", score2: 28, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Bismarck Bold Strikers", score1: 41, team2: "Minot Mavericks", score2: 37, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Grand Forks Gutsy Ones", score1: 31, team2: "Williston Wildcards", score2: 29, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Jamestown Daring Dozen", score1: 38, team2: "Valley City Venturers", score2: 33, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Dickinson Daredevils", score1: 26, team2: "Watford City Warriors", score2: 22, status: "Final" },
+            { league: "Horse Tossing", team1: "Billings Bronco Busters", score1: 6, team2: "Missoula Mustang Throwers", score2: 8, status: "Final" },
+            { league: "Horse Tossing", team1: "Great Falls Equine Experts", score1: 7, team2: "Lewistown Livestock Lobbers", score2: 5, status: "Final" },
+            { league: "Horse Tossing", team1: "Bozeman Beast Throwers", score1: 9, team2: "Butte Bronc Bouncers", score2: 6, status: "Final" },
+            { league: "Horse Tossing", team1: "Helena Horseback Heralds", score1: 8, team2: "Anaconda Equine Athletes", score2: 7, status: "Final" },
+            { league: "Horse Tossing", team1: "Havre Heavy Tosser", score1: 5, team2: "Kalispell Pony Hurlers", score2: 6, status: "Final" },
+            { league: "Quidditch", team1: "Bozeman Bludgeons", score1: 289, team2: "Helena Seekers", score2: 234, status: "Final" },
+            { league: "Quidditch", team1: "Ashland Snitches", score1: 167, team2: "Missoula Beaters", score2: 145, status: "Final" },
+            { league: "Lawn Bowling", team1: "Peoria Lawn Masters", score1: 51, team2: "Urbana Smooth Rollers", score2: 48, status: "Final" },
+            { league: "Lawn Bowling", team1: "Springfield Rollers", score1: 46, team2: "Decatur Greens", score2: 42, status: "Final" },
+            { league: "Grass Surfing", team1: "Eureka Gliders", score1: 7, team2: "Chico Wave Warriors", score2: 9, status: "Final" },
+            { league: "Grass Surfing", team1: "Red Bluff Wave Surfers", score1: 6, team2: "Corning Slope Masters", score2: 5, status: "Final" },
+            { league: "Ice Baseball", team1: "Duluth Frostballs", score1: 10, team2: "Superior Sliders", score2: 11, status: "Final" },
+            { league: "Ice Baseball", team1: "Ashland Frozen Bats", score1: 13, team2: "Bayfield Blizzard Batters", score2: 9, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Fargo Fearless", score1: 32, team2: "Bismarck Bold Strikers", score2: 29, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Minot Mavericks", score1: 25, team2: "Grand Forks Gutsy Ones", score2: 28, status: "Final" },
+            { league: "Horse Tossing", team1: "Missoula Mustang Throwers", score1: 7, team2: "Great Falls Equine Experts", score2: 8, status: "Final" },
+            { league: "Horse Tossing", team1: "Lewistown Livestock Lobbers", score1: 6, team2: "Bozeman Beast Throwers", score2: 4, status: "Final" },
+            { league: "Quidditch", team1: "Billings Broomsticks", score1: 278, team2: "Helena Seekers", score2: 201, status: "Final" },
+            { league: "Quidditch", team1: "Butte Chasers", score1: 189, team2: "Missoula Beaters", score2: 176, status: "Final" },
+            { league: "Lawn Bowling", team1: "Champaign Bowlers", score1: 53, team2: "Normal Curve Throwers", score2: 44, status: "Final" },
+            { league: "Lawn Bowling", team1: "Winona Weavers", score1: 49, team2: "Sedalia Strikers", score2: 51, status: "Final" },
+            { league: "Grass Surfing", team1: "Oroville Lawn Riders", score1: 8, team2: "Redding Riders", score2: 7, status: "Final" },
+            { league: "Grass Surfing", team1: "Tehama Grass Gliders", score1: 9, team2: "Orland Terrain Riders", score2: 6, status: "Final" },
+            { league: "Ice Baseball", team1: "Ironwood Ice Strikers", score1: 12, team2: "Houghton Glacier Hitters", score2: 8, status: "Final" },
+            { league: "Ice Baseball", team1: "Crystal Falls Frost Nine", score1: 9, team2: "Negaunee Frozen Sluggers", score2: 14, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Williston Wildcards", score1: 33, team2: "Jamestown Daring Dozen", score2: 30, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Valley City Venturers", score1: 35, team2: "Dickinson Daredevils", score2: 27, status: "Final" },
+            { league: "Horse Tossing", team1: "Butte Bronc Bouncers", score1: 7, team2: "Helena Horseback Heralds", score2: 9, status: "Final" },
+            { league: "Horse Tossing", team1: "Anaconda Equine Athletes", score1: 8, team2: "Havre Heavy Tosser", score2: 5, status: "Final" },
+            { league: "Quidditch", team1: "Ashland Snitches", score1: 223, team2: "Bozeman Bludgeons", score2: 198, status: "Final" },
+            { league: "Quidditch", team1: "Helena Seekers", score1: 212, team2: "Billings Broomsticks", score2: 189, status: "Final" },
+            { league: "Lawn Bowling", team1: "Springfield Rollers", score1: 59, team2: "Peoria Lawn Masters", score2: 54, status: "Final" },
+            { league: "Lawn Bowling", team1: "Decatur Greens", score1: 47, team2: "Champaign Bowlers", score2: 50, status: "Final" },
+            { league: "Grass Surfing", team1: "Bend Breakers", score1: 9, team2: "Eureka Gliders", score2: 8, status: "Final" },
+            { league: "Grass Surfing", team1: "Redding Riders", score1: 7, team2: "Chico Wave Warriors", score2: 6, status: "Final" },
+            { league: "Ice Baseball", team1: "Marquette Icebreakers", score1: 11, team2: "Ashland Frozen Bats", score2: 10, status: "Final" },
+            { league: "Ice Baseball", team1: "Duluth Frostballs", score1: 13, team2: "Bayfield Blizzard Batters", score2: 12, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Topeka Triggers", score1: 39, team2: "Grand Forks Gutsy Ones", score2: 31, status: "Final" },
+            { league: "Russian Roulette Rules Football", team1: "Fargo Fearless", score1: 36, team2: "Williston Wildcards", score2: 33, status: "Final" },
+            { league: "Horse Tossing", team1: "Billings Bronco Busters", score1: 8, team2: "Lewistown Livestock Lobbers", score2: 7, status: "Final" },
+            { league: "Horse Tossing", team1: "Great Falls Equine Experts", score1: 6, team2: "Bozeman Beast Throwers", score2: 9, status: "Final" }
+        ];
+
+        // Standings Data
+        const standingsData = {
+            "Quidditch": [
+                { rank: 1, team: "Helena Seekers", wins: 12, losses: 2, draws: 1 },
+                { rank: 2, team: "Bozeman Bludgeons", wins: 11, losses: 3, draws: 1 },
+                { rank: 3, team: "Billings Broomsticks", wins: 10, losses: 4, draws: 1 },
+                { rank: 4, team: "Ashland Snitches", wins: 9, losses: 5, draws: 1 },
+                { rank: 5, team: "Missoula Beaters", wins: 7, losses: 7, draws: 1 },
+                { rank: 6, team: "Butte Chasers", wins: 5, losses: 9, draws: 1 }
+            ],
+            "Lawn Bowling": [
+                { rank: 1, team: "Springfield Rollers", wins: 14, losses: 2, draws: 0 },
+                { rank: 2, team: "Peoria Lawn Masters", wins: 13, losses: 3, draws: 0 },
+                { rank: 3, team: "Champaign Bowlers", wins: 12, losses: 4, draws: 0 },
+                { rank: 4, team: "Urbana Smooth Rollers", wins: 10, losses: 6, draws: 0 },
+                { rank: 5, team: "Decatur Greens", wins: 8, losses: 8, draws: 0 },
+                { rank: 6, team: "Winona Weavers", wins: 6, losses: 10, draws: 0 },
+                { rank: 7, team: "Sedalia Strikers", wins: 4, losses: 12, draws: 0 },
+                { rank: 8, team: "Normal Curve Throwers", wins: 2, losses: 14, draws: 0 }
+            ],
+            "Grass Surfing": [
+                { rank: 1, team: "Oroville Lawn Riders", wins: 11, losses: 3, draws: 1 },
+                { rank: 2, team: "Chico Wave Warriors", wins: 10, losses: 4, draws: 1 },
+                { rank: 3, team: "Red Bluff Wave Surfers", wins: 9, losses: 5, draws: 1 },
+                { rank: 4, team: "Corning Slope Masters", wins: 8, losses: 6, draws: 1 },
+                { rank: 5, team: "Redding Riders", wins: 7, losses: 7, draws: 1 },
+                { rank: 6, team: "Tehama Grass Gliders", wins: 6, losses: 8, draws: 1 },
+                { rank: 7, team: "Orland Terrain Riders", wins: 5, losses: 9, draws: 1 },
+                { rank: 8, team: "Bend Breakers", wins: 3, losses: 11, draws: 1 },
+                { rank: 9, team: "Eureka Gliders", wins: 2, losses: 12, draws: 1 }
+            ],
+            "Ice Baseball": [
+                { rank: 1, team: "Marquette Icebreakers", wins: 13, losses: 3, draws: 0 },
+                { rank: 2, team: "Ironwood Ice Strikers", wins: 12, losses: 4, draws: 0 },
+                { rank: 3, team: "Duluth Frostballs", wins: 11, losses: 5, draws: 0 },
+                { rank: 4, team: "Superior Sliders", wins: 10, losses: 6, draws: 0 },
+                { rank: 5, team: "Bayfield Blizzard Batters", wins: 8, losses: 8, draws: 0 },
+                { rank: 6, team: "Houghton Glacier Hitters", wins: 7, losses: 9, draws: 0 },
+                { rank: 7, team: "Ashland Frozen Bats", wins: 5, losses: 11, draws: 0 },
+                { rank: 8, team: "Crystal Falls Frost Nine", wins: 4, losses: 12, draws: 0 },
+                { rank: 9, team: "Negaunee Frozen Sluggers", wins: 2, losses: 14, draws: 0 }
+            ],
+            "Russian Roulette Rules Football": [
+                { rank: 1, team: "Topeka Triggers", wins: 12, losses: 2, draws: 1 },
+                { rank: 2, team: "Fargo Fearless", wins: 11, losses: 3, draws: 1 },
+                { rank: 3, team: "Bismarck Bold Strikers", wins: 10, losses: 4, draws: 1 },
+                { rank: 4, team: "Grand Forks Gutsy Ones", wins: 9, losses: 5, draws: 1 },
+                { rank: 5, team: "Williston Wildcards", wins: 8, losses: 6, draws: 1 },
+                { rank: 6, team: "Minot Mavericks", wins: 7, losses: 7, draws: 1 },
+                { rank: 7, team: "Valley City Venturers", wins: 5, losses: 9, draws: 1 },
+                { rank: 8, team: "Jamestown Daring Dozen", wins: 4, losses: 10, draws: 1 },
+                { rank: 9, team: "Dickinson Daredevils", wins: 2, losses: 12, draws: 1 }
+            ],
+            "Horse Tossing": [
+                { rank: 1, team: "Great Falls Equine Experts", wins: 13, losses: 2, draws: 0 },
+                { rank: 2, team: "Bozeman Beast Throwers", wins: 12, losses: 3, draws: 0 },
+                { rank: 3, team: "Helena Horseback Heralds", wins: 11, losses: 4, draws: 0 },
+                { rank: 4, team: "Billings Bronco Busters", wins: 10, losses: 5, draws: 0 },
+                { rank: 5, team: "Butte Bronc Bouncers", wins: 8, losses: 7, draws: 0 },
+                { rank: 6, team: "Missoula Mustang Throwers", wins: 7, losses: 8, draws: 0 },
+                { rank: 7, team: "Lewistown Livestock Lobbers", wins: 5, losses: 10, draws: 0 },
+                { rank: 8, team: "Anaconda Equine Athletes", wins: 4, losses: 11, draws: 0 },
+                { rank: 9, team: "Havre Heavy Tosser", wins: 2, losses: 13, draws: 0 },
+                { rank: 10, team: "Kalispell Pony Hurlers", wins: 1, losses: 14, draws: 0 }
+            ]
+        };
+
+        function initializeStandings() {
+            const standingsGrid = document.getElementById('standingsGrid');
+            if (!standingsGrid) return;
+
+            standingsGrid.innerHTML = Object.entries(standingsData).map(([league, teams]) => `
+                <div class="standings-league">
+                    <h3>${league}</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30px;">#</th>
+                                <th>Team</th>
+                                <th style="width: 40px; text-align: center;">W</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${teams.map(team => `
+                                <tr>
+                                    <td class="standings-rank">${team.rank}</td>
+                                    <td class="standings-team">${team.team}</td>
+                                    <td class="standings-wins">${team.wins}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `).join('');
+        }
+
+        function initializeTicker() {
+            const tickerContent = document.getElementById('newsTickerContent');
+            if (!tickerContent) return;
+            
+            const allHeadlines = [...newsHeadlines, ...newsHeadlines];
+            
+            tickerContent.innerHTML = allHeadlines.map(headline => 
+                `<div class="ticker-item">${headline}</div>`
+            ).join('');
+        }
+
+        function initializeScores() {
+            const scoresContent = document.getElementById('scoresContent');
+            if (!scoresContent) return;
+            
+            scoresContent.innerHTML = sportsScores.map(score => `
+                <div class="score-card ${score.status.includes('Final') ? 'score-final' : ''}">
+                    <div class="score-league">${score.league}</div>
+                    <div class="score-matchup">
+                        <div class="score-team">
+                            <span class="score-team-name">${score.team1}</span>
+                            <span class="score-team-score">${score.score1}</span>
+                        </div>
+                        <div class="score-team">
+                            <span class="score-team-name">${score.team2}</span>
+                            <span class="score-team-score">${score.score2}</span>
+                        </div>
+                    </div>
+                    <div class="score-status">${score.status}</div>
+                </div>
+            `).join('');
+        }
+
+        function scrollScoresLeft() {
+            const container = document.getElementById('scoresContainer');
+            if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
+        }
+
+        function scrollScoresRight() {
+            const container = document.getElementById('scoresContainer');
+            if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
+        }
+
+        function scrollStandingsLeft() {
+            const wrapper = document.getElementById('standingsScrollWrapper');
+            if (wrapper) wrapper.scrollBy({ left: -400, behavior: 'smooth' });
+        }
+
+        function scrollStandingsRight() {
+            const wrapper = document.getElementById('standingsScrollWrapper');
+            if (wrapper) wrapper.scrollBy({ left: 400, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTicker();
+            initializeScores();
+        });
+
+        // Call on page load in case DOMContentLoaded already fired
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                initializeTicker();
+                initializeScores();
+                initializeStandings();
+            });
+        } else {
+            initializeTicker();
+            initializeScores();
+            initializeStandings();
+        }
     </script>
 </body>
 </html>
